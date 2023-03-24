@@ -3,26 +3,26 @@
 
 ## 本小组选题为基于pytorch的简单验证码识别
 主要识别数字＋字母类型的简单验证码
-![](https://github.com/asunashama/Smart_inlay/source/img/S747.jpg  "S747" )
+![](https://github.com/asunashama/Smart_inlay/tree/main/source/img/S747.jpg  "S747" )
 
 ## 关于卷积神经网络
 * [神经网络](https://blog.csdn.net/illikang/article/details/82019945)
 一个简单的网络示例：
-![](https://github.com/asunashama/Smart_inlay/source/img/em.jfif  "网络示例" )
+![](https://github.com/asunashama/Smart_inlay/tree/main/source/img/em.jfif  "网络示例" )
 全连接层(full-connected layer)，顾名思义，是将前面层的节点全部连接然后通过自己之后传入下一层。
 
 卷积神经网络主要由这几类层构成：输入层、卷积层，ReLU层、池化（Pooling）层和全连接层（全连接层和常规神经网络中的一样）。通过将这些层叠加起来，就可以构建一个完整的卷积神经网络。在实际应用中往往将卷积层与ReLU层共同称之为卷积层。
 
 ### 卷积层
 我们是使用卷积核来提取特征的，卷积核可以说是一个矩阵。卷积核的任务就如下所示：
-![](https://github.com/asunashama/Smart_inlay/source/img/juanjihe.gif  "卷积核" )
+![](https://github.com/asunashama/Smart_inlay/tree/main/source/img/juanjihe.gif  "卷积核" )
 从左上角开始，卷积核就对应着数据的3*3的矩阵范围，然后相乘再相加得出一个值。按照这种顺序，每隔一个像素就操作一次，我们就可以得出9个值。这九个值形成的矩阵被我们称作激活映射（Activation map）。这就是我们的卷积层工作原理。
 
 假使我们只有一个卷积核，那我们或许只能提取到一个边界。但假如我们有许多的卷积核检测不同的边界，不同的边界又构成不同的物体，这就是我们怎么从视觉图像检测物体的凭据了。所以，深度学习的“深”不仅仅是代表网络，也代表我们能检测的物体的深度。即越深，提取的特征也就越多。
 
 ### 池化层 (pooling layer)
 池化层是降低参数，而降低参数的方法当然也只有删除参数了。池化层一般放在卷积层后面，所以池化层池化的是卷积层的输出。
-![](https://github.com/asunashama/Smart_inlay/source/img/chihua.png  "池化层" )
+![](https://github.com/asunashama/Smart_inlay/tree/main/source/img/chihua.png  "池化层" )
 选择最大池化，应该是为了提取最明显的特征，所以选用的最大池化。平均池化就是顾及每一个像素，所以选择将所有的像素值都相加然后再平均。
 
 
