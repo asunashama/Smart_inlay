@@ -1,9 +1,9 @@
-from torch.utils.data import DataLoader
-from dataset import MyDataset
 import torch
 from torch import nn
-from torch.nn import functional
 from torch.optim import Adam
+from torch.utils.data import DataLoader
+
+from dataset import MyDataset
 from net import Model
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -59,7 +59,7 @@ if __name__ == '__main__':
     MODEL = Model().to(device)
     loss_function = nn.MSELoss().to(device)
     opt = Adam(MODEL.parameters(), lr=0.001)
-    dataloader = DataLoader(MyDataset('Dataset/train_img'), batch_size=64, shuffle=True)
+    dataloader = DataLoader(MyDataset('train_img'), batch_size=64, shuffle=True)
     Train.train(MODEL, opt, loss_function, dataloader)
     Predict.predict()
 

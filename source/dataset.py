@@ -15,7 +15,6 @@ class MyDataset(Dataset):
     ])
 
     def __init__(self, image_path):
-        image_path = 'Verification_code_identification\\source\\train_img'
         super(MyDataset, self).__init__()
         self.image_path = [os.path.join(image_path, file_name) for file_name in os.listdir(image_path)]
 
